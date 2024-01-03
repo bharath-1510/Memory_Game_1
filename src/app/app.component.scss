@@ -1,0 +1,82 @@
+$color: red;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li,
+a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  position: sticky;
+  background-color: wheat;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  cursor: pointer;
+  width: 100px;
+  height: auto;
+}
+nav {
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  padding: 0 20px;
+}
+nav li a {
+  transition: all 0.3s ease 0s;
+}
+nav li a:hover {
+  color: $color;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.alert {
+  color: $color;
+  font-weight: 900;
+  padding: 20px;
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.active {
+  background-color: white;
+}

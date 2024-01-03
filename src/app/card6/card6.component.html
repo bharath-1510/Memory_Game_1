@@ -1,0 +1,24 @@
+<header id="navbar">
+  <img class="logo" src="../../assets/img/logo.png" />
+  <nav>
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">HOME</a></li>
+
+      <li><a routerLink="/Card6" routerLinkActive="active">CARD 6</a></li>
+      <li><a routerLink="/Card12" routerLinkActive="active">CARD 12</a></li>
+    </ul>
+  </nav>
+</header>
+<section class="game-container" (click)="onSection()">
+  <section class="image-card" (click)="onClick(game)" *ngFor="let game of box">
+    <div class="box-found" [hidden]="!game.isFound"></div>
+    <div [hidden]="game.isFound">
+      <img src="{{ game.path }}" [hidden]="!game.isVisible" />
+    </div>
+  </section>
+</section>
+<section class="score-card">
+  <p>No of Moves : {{ cardStat["moves"] }}</p>
+  <p>No of Misses : {{ cardStat["misses"] }}</p>
+  <p>Rounds Played : {{ cardStat["roundsPlayed"] }}</p>
+</section>
