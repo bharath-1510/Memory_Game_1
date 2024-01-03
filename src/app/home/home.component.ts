@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  title = 'Home Page';
   ngOnInit(): void {
     this.cards = this.service.getData();
     this.cardsType = ['Card 6', 'Card 12'];

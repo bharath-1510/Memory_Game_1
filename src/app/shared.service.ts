@@ -6,8 +6,8 @@ import { Card } from './card.model';
 })
 export class SharedService {
   private data: { [key: string]: Card } = {
-    'Card 6': new Card(0, 0, 0),
-    'Card 12': new Card(0, 0, 0),
+    'Card 6': new Card(0, 0, 0,0),
+    'Card 12': new Card(0, 0, 0,0),
   };
   getData(): any {
     return this.data;

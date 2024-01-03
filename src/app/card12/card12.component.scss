@@ -1,12 +1,42 @@
 @import "../app.component.scss";
 
-.game-container {
+.container {
   padding: 10px;
-  margin: 50px auto;
+  margin: 10px auto;
   display: flex;
   flex-wrap: wrap;
+
   justify-content: space-between;
-  width: 450px;
+  width: 100%;
+  .game-container {
+    padding: 10px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 500px;
+  }
+  .score-card {
+    padding: 10px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 400px;
+
+    .card {
+      margin-top: 10px;
+      text-align: center;
+
+      p {
+        padding: 10px;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+    }
+  }
 }
 
 .refresh {
@@ -15,27 +45,12 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
+
   button {
     text-transform: uppercase;
     width: 150px;
     height: 30px;
     font-size: 20px;
-  }
-}
-.score-card {
-  margin: 20px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 500px;
-  .card {
-    text-align: center;
-    p {
-      padding: 10px;
-      color: white;
-      font-size: 20px;
-      text-transform: uppercase;
-      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    }
+    margin-top: 10px;
   }
 }

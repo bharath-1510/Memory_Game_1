@@ -11,7 +11,10 @@ import { Router } from '@angular/router';
 })
 export class Card6Component implements OnInit, OnDestroy {
   private service = inject(SharedService);
+  title = '6 Cards Memory Game';
 
+  foundCount: number = 0;
+  acc1: number = 0;
   box: Game[] = [
     new Game(1, '../../assets/img/game1.png'),
     new Game(2, '../../assets/img/game1.png'),
@@ -29,7 +32,10 @@ export class Card6Component implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.cardStat.moves != 0) {
       let rounds = this.cardStat.roundsPlayed + 1;
-      this.service.setData(new Card(0, 0, rounds), 'Card 6');
+      let acc = this.cardStat.accuracy;
+      if (this.foundCount == 3) acc = acc + 100;
+      this.acc1 = Math.round(acc / rounds);
+      this.service.setData(new Card(0, 0, rounds, acc), 'Card 6');
     }
   }
   constructor(private route: Router) {}
@@ -39,7 +45,10 @@ export class Card6Component implements OnInit, OnDestroy {
   onRestart() {
     if (this.cardStat.moves != 0) {
       let rounds = this.cardStat.roundsPlayed + 1;
-      this.service.setData(new Card(0, 0, rounds), 'Card 6');
+      let acc = this.cardStat.accuracy;
+      if (this.foundCount == 3) acc = acc + 100;
+      this.acc1 = Math.round(acc / rounds);
+      this.service.setData(new Card(0, 0, rounds, acc), 'Card 6');
       this.box = [
         new Game(1, '../../assets/img/game1.png'),
         new Game(2, '../../assets/img/game1.png'),
@@ -50,6 +59,7 @@ export class Card6Component implements OnInit, OnDestroy {
       ];
       this.shuffle(this.box);
       this.openBox = [];
+      this.foundCount = 0;
       this.cardStat = this.service.getData()['Card 6'];
     } else {
       this.box = [
@@ -95,6 +105,7 @@ export class Card6Component implements OnInit, OnDestroy {
           this.box.filter((x) => {
             if (x.path === box1.path) x.isFound = true;
           });
+          this.foundCount++;
         } else {
           this.cardStat['misses']++;
         }
