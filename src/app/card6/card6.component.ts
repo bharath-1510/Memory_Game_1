@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Game } from '../game.model';
 import { SharedService } from '../shared.service';
 import { Card } from '../card.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card6',
@@ -10,6 +11,7 @@ import { Card } from '../card.model';
 })
 export class Card6Component implements OnInit, OnDestroy {
   private service = inject(SharedService);
+
   box: Game[] = [
     new Game(1, '../../assets/img/game1.png'),
     new Game(2, '../../assets/img/game1.png'),
@@ -22,15 +24,47 @@ export class Card6Component implements OnInit, OnDestroy {
   cardStat!: Card;
   ngOnInit(): void {
     this.shuffle(this.box);
-    this.cardStat = this.service.getData().Card6;
+    this.cardStat = this.service.getData()['Card 6'];
   }
   ngOnDestroy(): void {
     if (this.cardStat.moves != 0) {
       let rounds = this.cardStat.roundsPlayed + 1;
-      this.service.setData(new Card(0, 0, rounds), 'Card6');
+      this.service.setData(new Card(0, 0, rounds), 'Card 6');
     }
   }
-
+  constructor(private route: Router) {}
+  navigate() {
+    this.route.navigate(['/']);
+  }
+  onRestart() {
+    if (this.cardStat.moves != 0) {
+      let rounds = this.cardStat.roundsPlayed + 1;
+      this.service.setData(new Card(0, 0, rounds), 'Card 6');
+      this.box = [
+        new Game(1, '../../assets/img/game1.png'),
+        new Game(2, '../../assets/img/game1.png'),
+        new Game(3, '../../assets/img/game2.jpg'),
+        new Game(4, '../../assets/img/game2.jpg'),
+        new Game(5, '../../assets/img/game3.png'),
+        new Game(6, '../../assets/img/game3.png'),
+      ];
+      this.shuffle(this.box);
+      this.openBox = [];
+      this.cardStat = this.service.getData()['Card 6'];
+    } else {
+      this.box = [
+        new Game(1, '../../assets/img/game1.png'),
+        new Game(2, '../../assets/img/game1.png'),
+        new Game(3, '../../assets/img/game2.jpg'),
+        new Game(4, '../../assets/img/game2.jpg'),
+        new Game(5, '../../assets/img/game3.png'),
+        new Game(6, '../../assets/img/game3.png'),
+      ];
+      this.shuffle(this.box);
+      this.openBox = [];
+      this.cardStat = this.service.getData()['Card 6'];
+    }
+  }
   onClick(game: Game) {
     if (game != undefined) {
       this.box.filter((x) => {
@@ -41,7 +75,7 @@ export class Card6Component implements OnInit, OnDestroy {
   }
 
   onSection() {
-    setInterval(() => {
+    setTimeout(() => {
       this.checkEquality();
     }, 2000);
   }

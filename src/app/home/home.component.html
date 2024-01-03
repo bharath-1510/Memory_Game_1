@@ -1,23 +1,9 @@
-<header id="navbar">
-  <img
-    width="100px"
-    class="logo"
-    height="auto"
-    src="../../assets/img/logo.png"
-  />
-  <nav>
-    <ul>
-      <li><a routerLink="/home" routerLinkActive="active">HOME</a></li>
-
-      <li><a routerLink="/Card6" routerLinkActive="active">CARD 6</a></li>
-      <li><a routerLink="/Card12" routerLinkActive="active">CARD 12</a></li>
-    </ul>
-  </nav>
-</header>
-<section class="card-row">
+<section class="card-section">
   <section class="card" *ngFor="let card of cardsType">
-    {{ card }}
-    No of Rounds Played {{ cards[card].roundsPlayed }}
+    <h3>{{ card }}</h3>
+    <p>
+      Rounds Played <b>{{ cards[card].roundsPlayed }}</b>
+    </p>
     <button type="button" (click)="navigate(card)">Go to Page</button>
   </section>
 </section>

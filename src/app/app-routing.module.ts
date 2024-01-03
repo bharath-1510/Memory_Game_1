@@ -11,11 +11,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'Card6',
+    path: 'card6',
     component: Card6Component,
   },
   {
-    path: 'Card12',
+    path: 'card12',
     component: Card12Component,
   },
 
