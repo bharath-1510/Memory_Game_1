@@ -2,7 +2,7 @@
 
 .container {
   padding: 10px;
-  margin: 10px auto;
+  margin: 50px auto;
   display: flex;
   flex-wrap: wrap;
 
@@ -10,11 +10,11 @@
   width: 100%;
   .game-container {
     padding: 10px;
-    margin: 50px auto;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 500px;
+    width: 400px;
   }
   .score-card {
     padding: 10px;
@@ -48,6 +48,7 @@
 
   button {
     text-transform: uppercase;
+    border-radius: 10px;
     width: 150px;
     height: 30px;
     font-size: 20px;
