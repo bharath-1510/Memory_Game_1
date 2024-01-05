@@ -130,7 +130,7 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
   onClick(game: Game) {
-    if (game != undefined) {
+    if (game != undefined && this.openBox.length != 2) {
       this.box.filter((x) => {
         if (x.id === game.id) game.isVisible = true;
       });
@@ -141,14 +141,13 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
     this.route.navigate(['/']);
   }
   onSection() {
-    setTimeout(() => {
-      this.checkEquality();
-    }, 1000);
+    this.checkEquality();
   }
 
-  checkEquality() {
+  async checkEquality() {
     if (this.openBox != undefined) {
       if (this.openBox.length === 2) {
+        await sleep(2000);
         let box1 = this.openBox[0];
         let box2 = this.openBox[1];
         if (box1.path == box2.path) {
@@ -179,4 +178,7 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     return array;
   };
+}
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
