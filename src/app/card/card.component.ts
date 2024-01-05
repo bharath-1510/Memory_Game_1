@@ -45,7 +45,7 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.cardStat.moves != 0) {
       let rounds = this.cardStat.roundsPlayed + 1;
       let acc = this.cardStat.accuracy;
-      if (this.foundCount == 3) acc = acc + 100;
+      if (this.foundCount == Math.round(this.cardType / 2)) acc = acc + 100;
       this.acc1 = Math.round(acc / rounds);
       this.service.setData(new Card(0, 0, rounds, acc), this.cardName);
     }
@@ -61,7 +61,7 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.foundCount != 0) {
       let rounds = this.cardStat.roundsPlayed + 1;
       let acc = this.cardStat.accuracy;
-      if (this.foundCount == 3) acc = acc + 100;
+      if (this.foundCount == Math.round(this.cardType / 2)) acc = acc + 100;
       this.acc1 = Math.round(acc / rounds);
       this.service.setData(new Card(0, 0, rounds, acc), this.cardName);
       this.box =
@@ -156,7 +156,7 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
             if (x.path === box1.path) x.isFound = true;
           });
           this.foundCount++;
-          if (this.foundCount == 3) {
+          if (this.foundCount == Math.round(this.cardType / 2)) {
             this.onRestart();
             return;
           }
