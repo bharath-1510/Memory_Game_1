@@ -2,7 +2,7 @@
 (self.webpackChunkProject1 = self.webpackChunkProject1 || []).push([
   [179],
   {
-    931: () => {
+    81: () => {
       function J(e) {
         return "function" == typeof e;
       }
@@ -1111,7 +1111,7 @@
             );
           })(t, e, null, "!=");
       }
-      function R(e) {
+      function P(e) {
         return {
           token: e.token,
           providedIn: e.providedIn || null,
@@ -1137,13 +1137,13 @@
         wa = X({ ɵinj: X }),
         Rd = X({ ngInjectableDef: X }),
         Nw = X({ ngInjectorDef: X });
-      var x = (() => (
-        ((x = x || {})[(x.Default = 0)] = "Default"),
-        (x[(x.Host = 1)] = "Host"),
-        (x[(x.Self = 2)] = "Self"),
-        (x[(x.SkipSelf = 4)] = "SkipSelf"),
-        (x[(x.Optional = 8)] = "Optional"),
-        x
+      var R = (() => (
+        ((R = R || {})[(R.Default = 0)] = "Default"),
+        (R[(R.Host = 1)] = "Host"),
+        (R[(R.Self = 2)] = "Self"),
+        (R[(R.SkipSelf = 4)] = "SkipSelf"),
+        (R[(R.Optional = 8)] = "Optional"),
+        R
       ))();
       let Ca;
       function at(e) {
@@ -1156,7 +1156,7 @@
           ? void 0 === r.value
             ? (r.value = r.factory())
             : r.value
-          : n & x.Optional
+          : n & R.Optional
           ? null
           : void 0 !== t
           ? t
@@ -1182,21 +1182,21 @@
         const t = Zr;
         return (Zr = e), t;
       }
-      function jw(e, t = x.Default) {
+      function jw(e, t = R.Default) {
         if (void 0 === Zr) throw new w(-203, !1);
         return null === Zr
           ? xd(e, void 0, t)
-          : Zr.get(e, t & x.Optional ? null : void 0, t);
+          : Zr.get(e, t & R.Optional ? null : void 0, t);
       }
-      function P(e, t = x.Default) {
+      function x(e, t = R.Default) {
         return (
           (function Ow() {
             return Ca;
           })() || jw
         )(A(e), t);
       }
-      function H(e, t = x.Default) {
-        return P(e, fi(t));
+      function H(e, t = R.Default) {
+        return x(e, fi(t));
       }
       function fi(e) {
         return typeof e > "u" || "number" == typeof e
@@ -1214,7 +1214,7 @@
           if (Array.isArray(r)) {
             if (0 === r.length) throw new w(900, !1);
             let o,
-              i = x.Default;
+              i = R.Default;
             for (let s = 0; s < r.length; s++) {
               const a = r[s],
                 u = $w(a);
@@ -1224,8 +1224,8 @@
                   : (i |= u)
                 : (o = a);
             }
-            t.push(P(o, i));
-          } else t.push(P(r));
+            t.push(x(o, i));
+          } else t.push(x(r));
         }
         return t;
       }
@@ -1553,14 +1553,14 @@
         return 2 === t.type ? t.declTNode : 1 === t.type ? e[xe] : null;
       }
       function rf(e, t, n) {
-        if (n & x.SkipSelf) {
+        if (n & R.SkipSelf) {
           let o = t,
             i = e;
           for (
             ;
             !((o = o.parent),
             null !== o ||
-              n & x.Host ||
+              n & R.Host ||
               ((o = pC(i)), null === o || ((i = i[Yn]), 10 & o.type)));
 
           );
@@ -1860,25 +1860,25 @@
         })(e, t, n);
       }
       function vf(e, t, n) {
-        if (n & x.Optional || void 0 !== e) return e;
+        if (n & R.Optional || void 0 !== e) return e;
         ui();
       }
       function Df(e, t, n, r) {
         if (
-          (n & x.Optional && void 0 === r && (r = null),
-          !(n & (x.Self | x.Host)))
+          (n & R.Optional && void 0 === r && (r = null),
+          !(n & (R.Self | R.Host)))
         ) {
           const o = e[gi],
             i = at(void 0);
           try {
-            return o ? o.get(t, r, n & x.Optional) : xd(t, r, n & x.Optional);
+            return o ? o.get(t, r, n & R.Optional) : xd(t, r, n & R.Optional);
           } finally {
             at(i);
           }
         }
         return vf(r, 0, n);
       }
-      function wf(e, t, n, r = x.Default, o) {
+      function wf(e, t, n, r = R.Default, o) {
         if (null !== e) {
           if (1024 & t[$]) {
             const s = (function OC(e, t, n, r, o) {
@@ -1889,7 +1889,7 @@
                 null !== i && null !== s && 1024 & s[$] && !(256 & s[$]);
 
               ) {
-                const a = Cf(i, s, n, r | x.Self, xt);
+                const a = Cf(i, s, n, r | R.Self, xt);
                 if (a !== xt) return a;
                 let u = i.parent;
                 if (!u) {
@@ -1918,10 +1918,10 @@
           return "number" == typeof t ? (t >= 0 ? t & gf : NC) : t;
         })(n);
         if ("function" == typeof i) {
-          if (!rf(t, e, r)) return r & x.Host ? vf(o, 0, r) : Df(t, n, r, o);
+          if (!rf(t, e, r)) return r & R.Host ? vf(o, 0, r) : Df(t, n, r, o);
           try {
             const s = i(r);
-            if (null != s || r & x.Optional) return s;
+            if (null != s || r & R.Optional) return s;
             ui();
           } finally {
             cf();
@@ -1930,9 +1930,9 @@
           let s = null,
             a = yf(e, t),
             u = tr,
-            c = r & x.Host ? t[Pe][xe] : null;
+            c = r & R.Host ? t[Pe][xe] : null;
           for (
-            (-1 === a || r & x.SkipSelf) &&
+            (-1 === a || r & R.SkipSelf) &&
             ((u = -1 === a ? Ga(e, t) : t[a + 8]),
             u !== tr && Ef(r, !1)
               ? ((s = t[E]), (a = bi(u)), (t = Ii(u, t)))
@@ -1977,7 +1977,7 @@
             s,
             n,
             null == r ? to(a) && Ha : r != s && 0 != (3 & a.type),
-            o & x.Host && i === a
+            o & R.Host && i === a
           );
         return null !== l ? Rn(t, s, l, a) : xt;
       }
@@ -2011,7 +2011,7 @@
           const a = Mi(s.canSeeViewProviders);
           s.resolving = !0;
           const u = s.injectImpl ? at(s.injectImpl) : null;
-          rf(e, r, x.Default);
+          rf(e, r, R.Default);
           try {
             (o = e[n] = s.factory(void 0, i, e, r)),
               t.firstCreatePass &&
@@ -2047,7 +2047,7 @@
         return !!(n[t + (e >> mf)] & (1 << e));
       }
       function Ef(e, t) {
-        return !(e & x.Self || (e & x.Host && t));
+        return !(e & R.Self || (e & R.Host && t));
       }
       class nr {
         constructor(t, n) {
@@ -2112,7 +2112,7 @@
             "number" == typeof n
               ? (this.__NG_ELEMENT_ID__ = n)
               : void 0 !== n &&
-                (this.ɵprov = R({
+                (this.ɵprov = P({
                   token: this,
                   providedIn: n.providedIn || "root",
                   factory: n.factory,
@@ -2562,7 +2562,7 @@
               t.push(
                 { provide: o, useFactory: c, deps: q },
                 { provide: Sh, useValue: o, multi: !0 },
-                { provide: Bi, useValue: () => P(o), multi: !0 }
+                { provide: Bi, useValue: () => x(o), multi: !0 }
               );
             }
             const u = i.providers;
@@ -2612,7 +2612,7 @@
             o.has("environment") && this.records.set(Qt, dr(void 0, this));
           const i = this.records.get(Tu);
           null != i && "string" == typeof i.value && this.scopes.add(i.value),
-            (this.injectorDefTypes = new Set(this.get(Sh.multi, q, x.Self)));
+            (this.injectorDefTypes = new Set(this.get(Sh.multi, q, R.Self)));
         }
         destroy() {
           this.assertNotDestroyed(), (this._destroyed = !0);
@@ -2639,12 +2639,12 @@
             qn(n), at(r);
           }
         }
-        get(t, n = qr, r = x.Default) {
+        get(t, n = qr, r = R.Default) {
           this.assertNotDestroyed(), (r = fi(r));
           const o = qn(this),
             i = at(void 0);
           try {
-            if (!(r & x.SkipSelf)) {
+            if (!(r & R.SkipSelf)) {
               let a = this.records.get(t);
               if (void 0 === a) {
                 const u =
@@ -2659,9 +2659,9 @@
               }
               if (null != a) return this.hydrate(t, a);
             }
-            return (r & x.Self ? Hi() : this.parent).get(
+            return (r & R.Self ? Hi() : this.parent).get(
               t,
-              (n = r & x.Optional && n === qr ? null : n)
+              (n = r & R.Optional && n === qr ? null : n)
             );
           } catch (s) {
             if ("NullInjectorError" === s.name) {
@@ -2710,7 +2710,7 @@
           const t = qn(this),
             n = at(void 0);
           try {
-            const r = this.get(Bi.multi, q, x.Self);
+            const r = this.get(Bi.multi, q, R.Self);
             for (const o of r) o();
           } finally {
             qn(t), at(n);
@@ -2749,7 +2749,7 @@
                         return !(!e || !e.useExisting);
                       })(e)
                     )
-                      r = () => P(A(e.useExisting));
+                      r = () => x(A(e.useExisting));
                     else {
                       const o = A(e && (e.useClass || e.provide));
                       if (
@@ -2868,7 +2868,7 @@
       let CE = (() => {
         class e {}
         return (
-          (e.ɵprov = R({ token: e, providedIn: "root", factory: () => null })),
+          (e.ɵprov = P({ token: e, providedIn: "root", factory: () => null })),
           e
         );
       })();
@@ -3103,14 +3103,14 @@
         return (
           (e.THROW_IF_NOT_FOUND = qr),
           (e.NULL = new bh()),
-          (e.ɵprov = R({ token: e, providedIn: "any", factory: () => P(Eh) })),
+          (e.ɵprov = P({ token: e, providedIn: "any", factory: () => x(Eh) })),
           (e.__NG_ELEMENT_ID__ = -1),
           e
         );
       })();
-      function I(e, t = x.Default) {
+      function I(e, t = R.Default) {
         const n = v();
-        return null === n ? P(e, t) : wf(Me(), n, A(e), t);
+        return null === n ? x(e, t) : wf(Me(), n, A(e), t);
       }
       function ep(e, t) {
         const n = e.contentQueries;
@@ -4480,10 +4480,10 @@
           }
         }
         return (
-          (e.ɵprov = R({
+          (e.ɵprov = P({
             token: e,
             providedIn: "environment",
-            factory: () => new e(P(Qt)),
+            factory: () => new e(x(Qt)),
           })),
           e
         );
@@ -4777,9 +4777,9 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(ps, 8));
+            return new (n || e)(x(ps, 8));
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -4810,14 +4810,14 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "platform" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "platform" })),
           e
         );
       })();
       const en = new N("LocaleId", {
         providedIn: "root",
         factory: () =>
-          H(en, x.Optional | x.SkipSelf) ||
+          H(en, R.Optional | R.SkipSelf) ||
           (function dM() {
             return (typeof $localize < "u" && $localize.locale) || Ar;
           })(),
@@ -4854,7 +4854,7 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -5180,9 +5180,9 @@
           }
           return (
             (e.ɵfac = function (n) {
-              return new (n || e)(P(de), P(jc), P(ms));
+              return new (n || e)(x(de), x(jc), x(ms));
             }),
-            (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+            (e.ɵprov = P({ token: e, factory: e.ɵfac })),
             e
           );
         })(),
@@ -5217,7 +5217,7 @@
             (e.ɵfac = function (n) {
               return new (n || e)();
             }),
-            (e.ɵprov = R({
+            (e.ɵprov = P({
               token: e,
               factory: e.ɵfac,
               providedIn: "platform",
@@ -5395,9 +5395,9 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(Kt));
+            return new (n || e)(x(Kt));
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "platform" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "platform" })),
           e
         );
       })();
@@ -5618,9 +5618,9 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(de), P(Qt), P(hr));
+            return new (n || e)(x(de), x(Qt), x(hr));
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -6052,7 +6052,7 @@
             throw new w(901, !1);
           }
         }
-        return (e.ɵprov = R({ token: e, providedIn: "root", factory: py })), e;
+        return (e.ɵprov = P({ token: e, providedIn: "root", factory: py })), e;
       })();
       const HM = Jm(null, "core", []);
       let zM = (() => {
@@ -6061,7 +6061,7 @@
           }
           return (
             (e.ɵfac = function (n) {
-              return new (n || e)(P(ys));
+              return new (n || e)(x(ys));
             }),
             (e.ɵmod = bn({ type: e })),
             (e.ɵinj = un({})),
@@ -6084,11 +6084,11 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({
+          (e.ɵprov = P({
             token: e,
             factory: function () {
               return (function ZM() {
-                return P(my);
+                return x(my);
               })();
             },
             providedIn: "platform",
@@ -6169,13 +6169,13 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(Ye));
+            return new (n || e)(x(Ye));
           }),
-          (e.ɵprov = R({
+          (e.ɵprov = P({
             token: e,
             factory: function () {
               return (function YM() {
-                return new my(P(Ye));
+                return new my(x(Ye));
               })();
             },
             providedIn: "platform",
@@ -6214,7 +6214,7 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({
+          (e.ɵprov = P({
             token: e,
             factory: function () {
               return H(wy);
@@ -6283,9 +6283,9 @@
           }
           return (
             (e.ɵfac = function (n) {
-              return new (n || e)(P(Qc), P(Dy, 8));
+              return new (n || e)(x(Qc), x(Dy, 8));
             }),
-            (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+            (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
             e
           );
         })(),
@@ -6344,9 +6344,9 @@
           }
           return (
             (e.ɵfac = function (n) {
-              return new (n || e)(P(Qc), P(Dy, 8));
+              return new (n || e)(x(Qc), x(Dy, 8));
             }),
-            (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+            (e.ɵprov = P({ token: e, factory: e.ɵfac })),
             e
           );
         })(),
@@ -6459,13 +6459,13 @@
             (e.joinWithSlash = Yc),
             (e.stripTrailingSlash = vy),
             (e.ɵfac = function (n) {
-              return new (n || e)(P(Vn));
+              return new (n || e)(x(Vn));
             }),
-            (e.ɵprov = R({
+            (e.ɵprov = P({
               token: e,
               factory: function () {
                 return (function XM() {
-                  return new Kc(P(Vn));
+                  return new Kc(x(Vn));
                 })();
               },
               providedIn: "root",
@@ -6594,10 +6594,10 @@
       let vA = (() => {
         class e {}
         return (
-          (e.ɵprov = R({
+          (e.ɵprov = P({
             token: e,
             providedIn: "root",
-            factory: () => new DA(P(Ye), window),
+            factory: () => new DA(x(Ye), window),
           })),
           e
         );
@@ -6794,7 +6794,7 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac })),
           e
         );
       })();
@@ -6831,9 +6831,9 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(Os), P(de));
+            return new (n || e)(x(Os), x(de));
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac })),
           e
         );
       })();
@@ -6880,7 +6880,7 @@
             (e.ɵfac = function (n) {
               return new (n || e)();
             }),
-            (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+            (e.ɵprov = P({ token: e, factory: e.ɵfac })),
             e
           );
         })(),
@@ -6923,9 +6923,9 @@
           }
           return (
             (e.ɵfac = function (n) {
-              return new (n || e)(P(Ye));
+              return new (n || e)(x(Ye));
             }),
-            (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+            (e.ɵprov = P({ token: e, factory: e.ɵfac })),
             e
           );
         })();
@@ -6999,9 +6999,9 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(Fs), P($o), P(No), P(Zy));
+            return new (n || e)(x(Fs), x($o), x(No), x(Zy));
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac })),
           e
         );
       })();
@@ -7178,9 +7178,9 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(Ye));
+            return new (n || e)(x(Ye));
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac })),
           e
         );
       })();
@@ -7268,9 +7268,9 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(Ye));
+            return new (n || e)(x(Ye));
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac })),
           e
         );
       })();
@@ -7375,7 +7375,7 @@
           }
           return (
             (e.ɵfac = function (n) {
-              return new (n || e)(P(rv, 12));
+              return new (n || e)(x(rv, 12));
             }),
             (e.ɵmod = bn({ type: e })),
             (e.ɵinj = un({ providers: [...iv, ...ov], imports: [pA, zM] })),
@@ -7396,9 +7396,9 @@
           }
           return (
             (e.ɵfac = function (n) {
-              return new (n || e)(P(Ye));
+              return new (n || e)(x(Ye));
             }),
-            (e.ɵprov = R({
+            (e.ɵprov = P({
               token: e,
               factory: function (n) {
                 let r = null;
@@ -7406,7 +7406,7 @@
                   (r = n
                     ? new n()
                     : (function vR() {
-                        return new sv(P(Ye));
+                        return new sv(x(Ye));
                       })()),
                   r
                 );
@@ -8022,7 +8022,7 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({
+          (e.ɵprov = P({
             token: e,
             factory: function () {
               return new Ml();
@@ -8691,7 +8691,7 @@
             (e.ɵfac = function (n) {
               return new (n || e)();
             }),
-            (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+            (e.ɵprov = P({ token: e, factory: e.ɵfac })),
             e
           );
         })(),
@@ -8701,7 +8701,7 @@
             (e.ɵfac = function (n) {
               return new (n || e)();
             }),
-            (e.ɵprov = R({
+            (e.ɵprov = P({
               token: e,
               factory: function (t) {
                 return bx.ɵfac(t);
@@ -9071,7 +9071,7 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -10277,7 +10277,7 @@
                   Array.isArray(a)
                     ? (c = a)
                     : ((u = a.create(n).injector),
-                      (c = yv(u.get(Br, [], x.Self | x.Optional))));
+                      (c = yv(u.get(Br, [], R.Self | R.Optional))));
                   return { routes: c.map(zl), injector: u };
                 }),
                 Il(() => {
@@ -10302,7 +10302,7 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -11005,7 +11005,7 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -11030,7 +11030,7 @@
             (e.ɵfac = function (n) {
               return new (n || e)();
             }),
-            (e.ɵprov = R({
+            (e.ɵprov = P({
               token: e,
               factory: function () {
                 return H(PP);
@@ -11052,9 +11052,9 @@
           }
           return (
             (e.ɵfac = function (n) {
-              return new (n || e)(P(sv));
+              return new (n || e)(x(sv));
             }),
-            (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+            (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
             e
           );
         })(),
@@ -11064,7 +11064,7 @@
             (e.ɵfac = function (n) {
               return new (n || e)();
             }),
-            (e.ɵprov = R({
+            (e.ɵprov = P({
               token: e,
               factory: function () {
                 return H(FP);
@@ -11114,7 +11114,7 @@
               )(r || e);
             };
           })()),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -11125,7 +11125,7 @@
             (e.ɵfac = function (n) {
               return new (n || e)();
             }),
-            (e.ɵprov = R({
+            (e.ɵprov = P({
               token: e,
               factory: function () {
                 return H(jP);
@@ -11151,7 +11151,7 @@
             (e.ɵfac = function (n) {
               return new (n || e)();
             }),
-            (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+            (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
             e
           );
         })();
@@ -11450,7 +11450,7 @@
           (e.ɵfac = function (n) {
             return new (n || e)();
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -11517,9 +11517,9 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(He), P(Hm), P(Qt), P(fD), P(Ql));
+            return new (n || e)(x(He), x(Hm), x(Qt), x(fD), x(Ql));
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac, providedIn: "root" })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac, providedIn: "root" })),
           e
         );
       })();
@@ -11605,7 +11605,7 @@
               throw new Error("invalid");
             })();
           }),
-          (e.ɵprov = R({ token: e, factory: e.ɵfac })),
+          (e.ɵprov = P({ token: e, factory: e.ɵfac })),
           e
         );
       })();
@@ -11628,8 +11628,8 @@
           const r = e.get(He),
             o = e.get(mD);
           1 === e.get(ed) && r.initialNavigation(),
-            e.get(yD, null, x.Optional)?.setUpPreloading(),
-            e.get(Xl, null, x.Optional)?.init(),
+            e.get(yD, null, R.Optional)?.setUpPreloading(),
+            e.get(Xl, null, R.Optional)?.init(),
             r.resetRootComponentType(n.componentTypes[0]),
             o.closed || (o.next(), o.complete(), o.unsubscribe());
         };
@@ -11803,7 +11803,7 @@
         }
         return (
           (e.ɵfac = function (n) {
-            return new (n || e)(P(vD, 8));
+            return new (n || e)(x(vD, 8));
           }),
           (e.ɵmod = bn({ type: e })),
           (e.ɵinj = un({ imports: [Ul] })),
@@ -11915,7 +11915,7 @@
           static #e = (this.ɵfac = function (r) {
             return new (r || e)();
           });
-          static #t = (this.ɵprov = R({
+          static #t = (this.ɵprov = P({
             token: e,
             factory: e.ɵfac,
             providedIn: "root",
@@ -12011,52 +12011,7 @@
           (this.path = n), (this.id = t);
         }
       }
-      let cN = (() => {
-        class e {
-          constructor() {
-            this.data = {
-              "Card 6": [
-                new S(1, "assets/img/game1.png"),
-                new S(2, "assets/img/game1.png"),
-                new S(3, "assets/img/game2.jpg"),
-                new S(4, "assets/img/game2.jpg"),
-                new S(5, "assets/img/game3.png"),
-                new S(6, "assets/img/game3.png"),
-              ],
-              "Card 12": [
-                new S(1, "assets/img/game1.png"),
-                new S(2, "assets/img/game1.png"),
-                new S(3, "assets/img/game2.jpg"),
-                new S(4, "assets/img/game2.jpg"),
-                new S(5, "assets/img/game3.png"),
-                new S(6, "assets/img/game3.png"),
-                new S(7, "assets/img/game4.jpg"),
-                new S(8, "assets/img/game4.jpg"),
-                new S(9, "assets/img/game5.jpg"),
-                new S(10, "assets/img/game5.jpg"),
-                new S(11, "assets/img/game6.jpg"),
-                new S(12, "assets/img/game6.jpg"),
-              ],
-            };
-          }
-          getData() {
-            return this.data;
-          }
-          setData(n, r) {
-            this.data[r] = n;
-          }
-          static #e = (this.ɵfac = function (r) {
-            return new (r || e)();
-          });
-          static #t = (this.ɵprov = R({
-            token: e,
-            factory: e.ɵfac,
-            providedIn: "root",
-          }));
-        }
-        return e;
-      })();
-      function lN(e, t) {
+      function cN(e, t) {
         if (1 & e) {
           const n = oc();
           ie(0, "section", 7),
@@ -12086,7 +12041,30 @@
             (this.route = n),
               (this.router = r),
               (this.service = H(CD)),
-              (this.service1 = H(cN)),
+              (this.cards = {
+                "Card 6": [
+                  new S(1, "assets/img/game1.png"),
+                  new S(2, "assets/img/game1.png"),
+                  new S(3, "assets/img/game2.jpg"),
+                  new S(4, "assets/img/game2.jpg"),
+                  new S(5, "assets/img/game3.png"),
+                  new S(6, "assets/img/game3.png"),
+                ],
+                "Card 12": [
+                  new S(1, "assets/img/game1.png"),
+                  new S(2, "assets/img/game1.png"),
+                  new S(3, "assets/img/game2.jpg"),
+                  new S(4, "assets/img/game2.jpg"),
+                  new S(5, "assets/img/game3.png"),
+                  new S(6, "assets/img/game3.png"),
+                  new S(7, "assets/img/game4.jpg"),
+                  new S(8, "assets/img/game4.jpg"),
+                  new S(9, "assets/img/game5.jpg"),
+                  new S(10, "assets/img/game5.jpg"),
+                  new S(11, "assets/img/game6.jpg"),
+                  new S(12, "assets/img/game6.jpg"),
+                ],
+              }),
               (this.foundCount = 0),
               (this.acc1 = 0),
               (this.openBox = []),
@@ -12107,7 +12085,7 @@
                   ? "6 Cards Memory Game"
                   : "12 Cards Memory Game"),
               (this.cardName = 6 == this.cardType ? "Card 6" : "Card 12"),
-              (this.box = this.service1.getData()[this.cardName]),
+              (this.box = this.cards[this.cardName]),
               this.shuffle(this.box),
               (this.cardStat = this.service.getData()[this.cardName]);
             let n = this.cardStat.roundsPlayed;
@@ -12158,7 +12136,7 @@
                         new S(11, "assets/img/game6.jpg"),
                         new S(12, "assets/img/game6.jpg"),
                       ]),
-                this.service1.setData(this.box, this.cardName),
+                (this.cards[this.cardName] = this.box),
                 this.shuffle(this.box),
                 (this.openBox = []),
                 (this.foundCount = 0),
@@ -12198,7 +12176,7 @@
                         new S(11, "assets/img/game6.jpg"),
                         new S(12, "assets/img/game6.jpg"),
                       ]),
-                this.service1.setData(this.box, this.cardName),
+                (this.cards[this.cardName] = this.box),
                 this.shuffle(this.box),
                 (this.openBox = []),
                 (this.cardStat = this.service.getData()[this.cardName]);
@@ -12236,7 +12214,7 @@
               };
             })(function* () {
               if (null != n.openBox && 2 === n.openBox.length) {
-                yield (function dN(e) {
+                yield (function lN(e) {
                   return new Promise((t) => setTimeout(t, e));
                 })(2e3);
                 let r = n.openBox[0],
@@ -12290,7 +12268,7 @@
                 fn("click", function () {
                   return o.onSection();
                 }),
-                ec(4, lN, 4, 4, "section", 2),
+                ec(4, cN, 4, 4, "section", 2),
                 le(),
                 ie(5, "section", 3)(6, "div", 4)(7, "p"),
                 Te(8),
@@ -12350,23 +12328,23 @@
         }
         return e;
       })();
-      const fN = [
+      const dN = [
         { path: "home", component: _D },
         { path: "card/:card", component: SD },
         { path: "card", component: SD },
         { path: "**", component: _D },
       ];
-      let hN = (() => {
+      let fN = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
             });
             static #t = (this.ɵmod = bn({ type: e }));
-            static #n = (this.ɵinj = un({ imports: [DD.forRoot(fN), DD] }));
+            static #n = (this.ɵinj = un({ imports: [DD.forRoot(dN), DD] }));
           }
           return e;
         })(),
-        pN = (() => {
+        hN = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -12387,22 +12365,22 @@
           }
           return e;
         })(),
-        gN = (() => {
+        pN = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
             });
-            static #t = (this.ɵmod = bn({ type: e, bootstrap: [pN] }));
-            static #n = (this.ɵinj = un({ imports: [mR, hN] }));
+            static #t = (this.ɵmod = bn({ type: e, bootstrap: [hN] }));
+            static #n = (this.ɵinj = un({ imports: [mR, fN] }));
           }
           return e;
         })();
       gR()
-        .bootstrapModule(gN)
+        .bootstrapModule(pN)
         .catch((e) => console.error(e));
     },
   },
   (J) => {
-    J((J.s = 931));
+    J((J.s = 81));
   },
 ]);

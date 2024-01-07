@@ -9,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from '../card.model';
 import { Game } from '../game.model';
 import { SharedService } from '../shared.service';
-import { BoxService } from '../box.service';
 
 @Component({
   selector: 'app-card',
@@ -18,7 +17,30 @@ import { BoxService } from '../box.service';
 })
 export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
   private service = inject(SharedService);
-  private service1 = inject(BoxService);
+  private cards: { [key: string]: Game[] } = {
+    'Card 6': [
+      new Game(1, '../../assets/img/game1.png'),
+      new Game(2, '../../assets/img/game1.png'),
+      new Game(3, '../../assets/img/game2.jpg'),
+      new Game(4, '../../assets/img/game2.jpg'),
+      new Game(5, '../../assets/img/game3.png'),
+      new Game(6, '../../assets/img/game3.png'),
+    ],
+    'Card 12': [
+      new Game(1, '../../assets/img/game1.png'),
+      new Game(2, '../../assets/img/game1.png'),
+      new Game(3, '../../assets/img/game2.jpg'),
+      new Game(4, '../../assets/img/game2.jpg'),
+      new Game(5, '../../assets/img/game3.png'),
+      new Game(6, '../../assets/img/game3.png'),
+      new Game(7, '../../assets/img/game4.jpg'),
+      new Game(8, '../../assets/img/game4.jpg'),
+      new Game(9, '../../assets/img/game5.jpg'),
+      new Game(10, '../../assets/img/game5.jpg'),
+      new Game(11, '../../assets/img/game6.jpg'),
+      new Game(12, '../../assets/img/game6.jpg'),
+    ],
+  };
   title!: string;
   cardType!: number;
   cardName!: string;
@@ -34,7 +56,7 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
     this.title =
       this.cardType == 6 ? '6 Cards Memory Game' : '12 Cards Memory Game';
     this.cardName = this.cardType == 6 ? 'Card 6' : 'Card 12';
-    this.box = this.service1.getData()[this.cardName];
+    this.box = this.cards[this.cardName];
     this.shuffle(this.box);
     this.cardStat = this.service.getData()[this.cardName];
     let rounds = this.cardStat.roundsPlayed;
@@ -88,7 +110,7 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
               new Game(11, '../../assets/img/game6.jpg'),
               new Game(12, '../../assets/img/game6.jpg'),
             ];
-      this.service1.setData(this.box, this.cardName);
+      this.cards[this.cardName] = this.box;
       this.shuffle(this.box);
       this.openBox = [];
       this.foundCount = 0;
@@ -122,7 +144,7 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
               new Game(11, '../../assets/img/game6.jpg'),
               new Game(12, '../../assets/img/game6.jpg'),
             ];
-      this.service1.setData(this.box, this.cardName);
+      this.cards[this.cardName] = this.box;
 
       this.shuffle(this.box);
       this.openBox = [];
